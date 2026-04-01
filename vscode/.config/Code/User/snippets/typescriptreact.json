@@ -1,0 +1,81 @@
+{
+  "React Functional Component": {
+    "prefix": ["rfc"],
+    "body": [
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:{\\}}) {",
+      "\treturn ${3:\"${TM_FILENAME_BASE}\"};",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Functional Component\n"
+  },
+  "Next Api page": {
+    "prefix": "napi",
+    "body": [
+      "import type { NextApiRequest, NextApiResponse } from \"next\";",
+      "",
+      "export default async function handler(",
+      "  req: NextApiRequest,",
+      "  res: NextApiResponse",
+      ") {",
+      "  if (req.method === \"GET\") {",
+      "    try {",
+      "      ${1}",
+      "      res.status(200).json(response);",
+      "    } catch (err) {",
+      "      res.status(500).json(err);",
+      "    }",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Next Api page"
+  },
+  "Typescript Next Page": {
+    "prefix": "npage",
+    "body": [
+      "import type { NextPage } from \"next\";",
+      "",
+      "const ${TM_FILENAME_BASE/(^.)/${1:/upcase}/}: NextPage = () => {",
+      "  return <div>${1:${TM_FILENAME_BASE}}</div>",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/(^.)/${1:/upcase}/};"
+    ],
+    "description": "Typescript Next Page"
+  },
+  "Jest": {
+    "prefix": "tsjest",
+    "body": [
+      "import { render, screen } from \"@testing-library/react\";",
+      "",
+      "describe(\"${TM_FILENAME_BASE/([^.]+).*/$1/}\", () => {",
+      "  it(\"should render\", () => {",
+      "    render(<${TM_FILENAME_BASE/([^.]+).*/$1/}/>);",
+      "",
+      "    expect(true).toBeInTheDocument();",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Jest"
+  },
+  "Cypress": {
+    "prefix": "tscy",
+    "body": [
+      "/// <reference types=\"cypress\" />",
+      "",
+      "describe(\"${TM_FILENAME_BASE/([^.]+).*/$1/}\", () => {",
+      "  beforeEach(() => {",
+      "    cy.visit(\"/\");",
+      "  });",
+      "",
+      "  it(\"${TM_FILENAME_BASE/([^.]+).*/$1/}\", () => {",
+      "    cy.findByText(\"${TM_FILENAME_BASE/([^.]+).*/$1/}\").should(\"exist\");",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Cypress"
+  }
+}

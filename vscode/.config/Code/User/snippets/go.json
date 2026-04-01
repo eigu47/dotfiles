@@ -1,0 +1,23 @@
+{
+	"fmt.Printf +v": {
+		"prefix": "ff",
+		"body": ["fmt.Printf(\"${1:val} %+v${2:\\n}\", ${1:val})"],
+		"description": "fmt.Printf %+v"
+	},
+	"fmt.Sprintf +v": {
+		"prefix": "fsf",
+		"body": ["fmt.Sprintf(\"${1:val}%+v$\", ${1:val})"],
+		"description": "fmt.Sprintf %+v"
+	},
+	"Grid print" : {
+		"prefix": "gff",
+		"body": [
+			"for _, row := range ${1:grid} {",
+			"  for _, cell := range row {",
+			"    fmt.Printf(\"%+v\", cell)",
+			"  }",
+			"  fmt.Println()",
+			"}"
+		],
+	}
+}
