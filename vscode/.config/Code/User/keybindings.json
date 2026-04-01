@@ -1,0 +1,250 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+down",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus || terminalIsOpen && terminalTabsFocus",
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus || terminalIsOpen && terminalTabsFocus",
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus || terminalIsOpen && terminalTabsFocus",
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "git.openFile",
+    "when": "!editorTextFocus",
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor",
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor",
+  },
+  {
+    "key": "ctrl+up",
+    "command": "cursorMove",
+    "args": {
+      "to": "up",
+      "by": "line",
+      "value": 5,
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "cursorMove",
+    "args": {
+      "to": "up",
+      "by": "line",
+      "value": 5,
+      "select": true,
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+down",
+    "command": "cursorMove",
+    "args": {
+      "to": "down",
+      "by": "line",
+      "value": 5,
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+,",
+    "command": "cursorMove",
+    "args": {
+      "to": "wrappedLineFirstNonWhitespaceCharacter",
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+shift+,",
+    "command": "cursorMove",
+    "args": {
+      "to": "wrappedLineFirstNonWhitespaceCharacter",
+      "select": true,
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+.",
+    "command": "cursorMove",
+    "args": {
+      "to": "wrappedLineLastNonWhitespaceCharacter",
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+shift+.",
+    "command": "cursorMove",
+    "args": {
+      "to": "wrappedLineLastNonWhitespaceCharacter",
+      "select": true,
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "cursorMove",
+    "args": {
+      "to": "down",
+      "by": "line",
+      "value": 5,
+      "select": true,
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly",
+  },
+  {
+    "key": "ctrl+k w",
+    "command": "workbench.action.closeOtherEditors",
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
+  },
+  {
+    "key": "alt+/",
+    "command": "github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused && !github.copilot.panelVisible",
+  },
+  {
+    "key": "alt+/",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "resourceFilename =~ /Github Copilot Suggestions/i",
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused",
+  },
+  {
+    "key": "ctrl+k w",
+    "command": "workbench.action.closeOtherEditors",
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode",
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
+  },
+  {
+    "key": "ctrl+m",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible",
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "goToPreviousReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible",
+  },
+  {
+    "key": "shift+alt+.",
+    "command": "editor.action.inPlaceReplace.down",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "shift+alt+,",
+    "command": "editor.action.inPlaceReplace.up",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "ctrl+shift+.",
+    "command": "-editor.action.inPlaceReplace.down",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "ctrl+shift+,",
+    "command": "-editor.action.inPlaceReplace.up",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "git.checkout",
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'",
+  },
+  {
+    "key": "ctrl+shift+;",
+    "command": "breadcrumbs.focusAndSelect",
+    "when": "breadcrumbsPossible && breadcrumbsVisible",
+  },
+  {
+    "key": "ctrl+shift+.",
+    "command": "-breadcrumbs.focusAndSelect",
+    "when": "breadcrumbsPossible && breadcrumbsVisible",
+  },
+  {
+    "key": "shift+alt+c",
+    "command": "copyRelativeFilePath",
+  },
+  {
+    "key": "ctrl+k ctrl+shift+c",
+    "command": "copyFilePath",
+  },
+  {
+    "key": "ctrl+f5",
+    "command": "workbench.action.files.revert",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "ctrl+k ctrl+n",
+    "command": "explorer.newFile",
+  },
+  {
+    "key": "ctrl+alt+up",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "ctrl+alt+down",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasSelection && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor",
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor",
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.createTerminalEditor",
+    "when": "terminalProcessSupported",
+  },
+]

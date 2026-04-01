@@ -1,0 +1,110 @@
+{
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools"
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.cursorSurroundingLines": 5,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fastScrollSensitivity": 8,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.maxColumn": 30,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.size": "fill",
+  "editor.mouseWheelScrollSensitivity": 2,
+  "editor.padding.bottom": 200,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "info"
+  ],
+  "errorLens.excludeBySource": [
+    "cSpell"
+  ],
+  "eslint.codeActionsOnSave.rules": null,
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.ts": "typescriptreact"
+  },
+  "files.simpleDialog.enable": true,
+  "git.autofetch": true,
+  "git.suggestSmartCommit": false,
+  "github.copilot.enable": {
+    "*": false,
+    "markdown": true,
+    "plaintext": true,
+    "scminput": false,
+    "yaml": true
+  },
+  "githubPullRequests.createOnPublishBranch": "never",
+  "gitlens.views.commitDetails.files.layout": "tree",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "prettier.endOfLine": "auto",
+  "prettier.printWidth": 120,
+  "remote.SSH.remotePlatform": {
+    "hal": "linux",
+    "hal.local": "linux"
+  },
+  "semanticdiff.closeOriginalTab": true,
+  "semanticdiff.diff.compareMovedCode": true,
+  "semanticdiff.diff.contextLines": 10000000000000000000,
+  "sqltools.format": {
+    "linesBetweenQueries": 2,
+    "reservedWordCase": "upper"
+  },
+  "sqltools.highlightQuery": false,
+  "terminal.integrated.sendKeybindingsToShell": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.toggleSidebarVisibility"
+  ],
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.env.osx": {},
+  "terminal.integrated.env.windows": {},
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.validate.enable": true,
+  "wakatime.apiKey": "waka_4a52ce64-8038-4515-81c9-d018eabd3962",
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.editor.customLabels.patterns": {
+    "**/app/**/{page,route,layout,template,loading}.{tsx,ts}": "${dirname}/${filename}.${extname}"
+  },
+  "workbench.list.smoothScrolling": true,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+}

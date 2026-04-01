@@ -1,0 +1,28 @@
+[user]
+	name = Eiguchi Pablo
+	email = pablo.eiguchi@gmail.com
+[alias]
+	cm = commit -m
+	co = checkout
+	cop = !bash -c 'git checkout $1 && git pull' -
+	cb = checkout -b
+	br = branch
+	st = status --short --branch
+	sm = stash -m
+	undo = reset --soft HEAD^
+	search = !git log --oneline --reverse --pretty='%h -%d %s (%ar, %as) <%an, %ae>' | grep -i
+	publish = push -u origin HEAD
+	resetclean = !git reset --hard HEAD && git clean -fd
+	nuke = "!bash -c 'echo -n \"⚠️  This deletes all changes and untracked files. Continue? (y/n) \"; read ans; [ \"$ans\" = y ] && git resetclean'"
+	lg = log --graph --pretty='%C(red)%h%C(auto) - %C(blue)%an <%ae>%C(auto) - %C(green)%ar, %as%C(auto)%d%n%s%n'
+	wtadd = !bash -c 'git worktree add "$(git rev-parse --show-toplevel).worktrees/temp"'
+	temp = !bash -c 'git -C "$(git rev-parse --show-toplevel).worktrees/temp" "$@"' -
+	wt = !bash -c 'git -C "$(git rev-parse --show-toplevel).worktrees/$1" "${@:2}"' -
+	last = !git lg --since="$(git log -1 --until=midnight --format=%as)" --until=midnight
+	today = !git lg --since=midnight
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
