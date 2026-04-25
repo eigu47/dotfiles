@@ -100,7 +100,7 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.validate.enable": true,
   "wakatime.apiKey": "waka_4a52ce64-8038-4515-81c9-d018eabd3962",
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "Dark Modern",
   "workbench.editor.customLabels.patterns": {
     "**/app/**/{page,route,layout,template,loading}.{tsx,ts}": "${dirname}/${filename}.${extname}"
   },
