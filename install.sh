@@ -1,9 +1,19 @@
-stow -v -t $HOME git
+#!/usr/bin/env bash
 
-stow -v -t $HOME tmux
+if [[ $1 =~ (adopt|diff) ]]; then
+        MODE="--adopt"
+fi
 
-stow -v -t $HOME ssh
+BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
+for dir in "$BASE_DIR"/*/; do
+        dir=${dir%/}
+        dir=${dir##*/}
 
-stow -v -t $HOME vscode
-
-stow -v -t $HOME opencode
+        read -n 1 -p "stow -v $MODE $dir? [y/n] " ans
+        echo
+        if [[ "$ans" =~ ^[yY] ]]; then
+                stow -v -t "$HOME" "$MODE" "$dir"
+        else
+                echo skipping "$dir"
+        fi
+done
