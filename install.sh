@@ -12,7 +12,7 @@ for dir in "$BASE_DIR"/*/; do
         read -n 1 -p "stow -v $MODE $dir? [y/n] " ans
         echo
         if [[ "$ans" =~ ^[yY] ]]; then
-                stow -v -t "$HOME" "$MODE" "$dir"
+                stow -v -t "$HOME" ${MODE:+$MODE} "$dir"
         else
                 echo skipping "$dir"
         fi
