@@ -15,6 +15,7 @@ for dir in "$BASE_DIR"/*/; do
 			line='[ -f ~/.bashrc.local ] && . ~/.bashrc.local'
 			if ! grep -Fq "$line" ~/.bashrc; then
 				cat <<-EOF >>~/.bashrc
+
 					# Load local bashrc
 					$line
 				EOF
