@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if command -v stow &>/dev/null; then
+	echo Stow not found >&2
+	exit 1
+fi
+
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 for dir in "$BASE_DIR"/*/; do
 	dir=${dir%/}

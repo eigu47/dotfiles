@@ -2,7 +2,6 @@
 
 # Aliases
 alias ..='echo "cd .."; cd ..'
-alias ls='ls -p'
 alias ll='ls -alhF'
 alias l='ls -CF'
 
@@ -17,11 +16,10 @@ command -v yazi &>/dev/null && y() {
 	rm -f -- "$tmp"
 }
 
-# Add fzf
-if [[ -d ~/.fzf/bin ]]; then
-	export PATH="$HOME/.fzf/bin:$PATH"
-	eval "$(fzf --bash)"
-fi
+command -v shellcheck &>/dev/null && command -v shfmt &>/dev/null && shlint() {
+	shellcheck "$@"
+	(($? < 2)) && shfmt -w "$@"
+}
 
 # Tmux
 export FZF_TMUX_OPTS="-p"
