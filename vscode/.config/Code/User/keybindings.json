@@ -247,4 +247,16 @@
     "command": "workbench.action.createTerminalEditor",
     "when": "terminalProcessSupported",
   },
+  {
+    "key": "ctrl+k t",
+    "command": "settings.cycle",
+    "args": {
+      "id": "sendKeybindingsToShell",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        { "terminal.integrated.sendKeybindingsToShell": false },
+        { "terminal.integrated.sendKeybindingsToShell": true }
+      ]
+    }
+  }
 ]
