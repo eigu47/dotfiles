@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if command -v stow &>/dev/null; then
+if ! command -v stow &>/dev/null; then
 	echo Stow not found >&2
 	exit 1
 fi
