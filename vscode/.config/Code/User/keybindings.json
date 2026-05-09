@@ -255,8 +255,8 @@
       "overrideWorkspaceSettings": true,
       "values": [
         { "terminal.integrated.sendKeybindingsToShell": false },
-        { "terminal.integrated.sendKeybindingsToShell": true }
-      ]
-    }
-  }
+        { "terminal.integrated.sendKeybindingsToShell": true },
+      ],
+    },
+  },
 ]
