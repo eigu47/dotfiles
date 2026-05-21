@@ -9,6 +9,7 @@
 	br = branch
 	st = status --short --branch
 	sm = stash -m
+	po = !bash -c 'git pull origin $1' -
 	undo = reset --soft HEAD^
 	search = !git log --oneline --reverse --pretty='%h -%d %s (%ar, %as) <%an, %ae>' | grep -i --color=auto
 	publish = push -u origin HEAD
