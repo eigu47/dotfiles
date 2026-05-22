@@ -6,6 +6,11 @@ alias ls='ls --color=auto -p'
 alias ll='ls -alhF'
 alias l='ls -CF'
 
+command -v micro &>/dev/null && {
+	alias mi='micro'
+	export EDITOR='micro'
+}
+
 command -v lazygit &>/dev/null && alias lg="lazygit"
 command -v batcat &>/dev/null && alias bat="batcat"
 
