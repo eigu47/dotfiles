@@ -5,17 +5,17 @@ if ! command -v stow &>/dev/null; then
 	exit 1
 fi
 
-BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
+BASE_DIR=$(cd "$(dirname "$0")" && pwd)
 for dir in "$BASE_DIR"/*/; do
 	dir=${dir%/}
 	dir=${dir##*/}
 
 	read -r -n 1 -p "stow -v -t \$HOME $* $dir? [y/n] " ans
 	echo
-	if [[ "$ans" =~ ^[yY] ]]; then
+	if [[ $ans =~ ^[yY] ]]; then
 		stow -v -t "$HOME" "$@" "$dir"
 
-		case "$dir" in
+		case $dir in
 		bash)
 			line='[ -f ~/.bashrc.local ] && . ~/.bashrc.local'
 			if ! grep -Fq "$line" ~/.bashrc; then
@@ -24,8 +24,7 @@ for dir in "$BASE_DIR"/*/; do
 					# Load local bashrc
 					$line
 				EOF
-
-				echo Added line in bashrc
+				echo 'Added load line in bashrc'
 			fi
 			;;
 		esac
