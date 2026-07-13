@@ -15,14 +15,12 @@
 	publish = push -u origin HEAD
 	resetclean = !git reset --hard HEAD && git clean -fd
 	nuke = "!bash -c 'read -rp \"⚠️  This deletes all changes and untracked files. Continue? (y/n) \" ans; [[ $ans =~ ^[yY] ]] && git resetclean'"
-	lg = log --graph --date=format:'%Y-%m-%d %a %H:%M:%S' --pretty=format:'%C(red)%h%C(auto) - %C(blue)%an <%ae>%C(auto) - %C(green)%ar, %ad%C(auto)%d%n          %s%n'
+	lg = log --graph --date=format:'%Y-%m-%d %a %H:%M:%S' --pretty=format:'%C(red)%h%C(auto) - %C(bold blue)%an <%ae>%C(auto) - %C(green)%ar, %ad%C(auto)%d%n          %s%n'
 	root = rev-parse --show-toplevel
 	wtadd = !bash -c 'git worktree add "$(git root).worktrees/${1:-temp}"' -
 	temp = !bash -c 'git -C "$(git root).worktrees/temp" "$@"' -
 	wt = !bash -c 'git -C "$(git root).worktrees/$1" "${@:2}"' -
-	today = !git lg --since=midnight
+	today = lg --since=midnight
 	last = !git lg --since="$(git log -1 --until=midnight --format=%as)" --until=midnight
 [credential "https://github.com"]
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
