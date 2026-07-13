@@ -22,5 +22,7 @@
 	wt = !bash -c 'git -C "$(git root).worktrees/$1" "${@:2}"' -
 	today = lg --since=midnight
 	last = !git lg --since="$(git log -1 --until=midnight --format=%as)" --until=midnight
+[pull]
+	rebase = false
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
