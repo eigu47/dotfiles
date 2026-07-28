@@ -7,6 +7,11 @@ alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
 
+tmpcd() {
+	cd "$(mktemp -d)" || return
+	pwd
+}
+
 command -v micro &>/dev/null && {
 	alias mi='micro'
 	export EDITOR='micro'
