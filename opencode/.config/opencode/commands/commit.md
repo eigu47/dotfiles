@@ -1,11 +1,19 @@
 ---
-description: Generate a Git commit from the current changes
+description: Generate Git commits following the Conventional Commits specification
 agent: build
-model: opencode/claude-3-5-haiku
+model: opencode/deepseek-v4-flash
 ---
 
-- Create a single Git commit using the **Conventional Commits** format
-- Analyze **only staged changes**
-  - If no files are staged, **stage all changes**
+Assist in creating clean, well-structured Git commits using the **Conventional Commits** format
+
+## Behavior
+
+- Analyze the current working tree and staged changes
+- Group changes by feature, scope, or theme when appropriate
+- Suggest **separate commits** if multiple logical changes are detected
+- **Ask for explicit user confirmation** before creating any commit, showing:
+  - The proposed commit message
+  - The files included in each commit
 - Use a concise, imperative description
-- After committing, show a summary of the commit
+- Omit the scope if it is not applicable
+- After committing, show a summary of the commits

@@ -10,7 +10,7 @@ for dir in "$BASE_DIR"/*/; do
 	dir=${dir%/}
 	dir=${dir##*/}
 
-	read -r -n 1 -p "stow -v -t \$HOME $* $dir? [y/n] " ans
+	read -r -n 1 -p "stow -v -t \$HOME${*:+ $*} $dir? [y/n] " ans
 	echo
 	if [[ $ans =~ ^[yY] ]]; then
 		stow -v -t "$HOME" "$@" "$dir"
