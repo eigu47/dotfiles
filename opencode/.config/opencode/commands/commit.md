@@ -1,7 +1,7 @@
 ---
 description: Generate Git commits following the Conventional Commits specification
 agent: build
-model: opencode/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 ---
 
 Assist in creating clean, well-structured Git commits using the **Conventional Commits** format
