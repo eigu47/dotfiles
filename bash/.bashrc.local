@@ -19,6 +19,7 @@ command -v micro &>/dev/null && {
 
 command -v lazygit &>/dev/null && alias lg="lazygit"
 command -v batcat &>/dev/null && alias bat="batcat"
+command -v opencode &>/dev/null && alias oc="opencode"
 
 command -v yazi &>/dev/null && y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
