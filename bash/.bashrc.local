@@ -39,6 +39,10 @@ docker compose version &>/dev/null && docker-update() {
 		docker compose up -d "$@"
 }
 
+sshtmux() {
+	ssh -t "$@" 'command -v tmux >/dev/null && exec tmux new -A -s main || exec "$SHELL"'
+}
+
 # Tmux
 export FZF_TMUX_OPTS="-p"
 
