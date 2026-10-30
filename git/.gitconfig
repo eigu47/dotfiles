@@ -16,12 +16,12 @@
 	resetclean = !git reset --hard HEAD && git clean -fd
 	nuke = "!bash -c 'read -rp \"⚠️  This deletes all changes and untracked files. Continue? (y/n) \" ans; [[ $ans =~ ^[yY] ]] && git resetclean'"
 	lg = log --graph --date=format:'%Y-%m-%d %a %H:%M:%S' --pretty=format:'%C(red)%h%C(auto) - %C(bold blue)%an <%ae>%C(auto) - %C(green)%ar, %ad%C(auto)%d%n          %s%n'
-	root = rev-parse --show-toplevel
-	wtadd = !bash -c 'git worktree add "$(git root).worktrees/${1:-temp}"' -
+	root = !cd "$(git rev-parse --path-format=absolute --git-common-dir)/.." && pwd
+	wtadd = !bash -c 'git worktree add "$(git root).worktrees/${1:-temp}" "${1:-temp}" 2>/dev/null || git worktree add -b "${1:-temp}" "$(git root).worktrees/${1:-temp}"' -
 	temp = !bash -c 'git -C "$(git root).worktrees/temp" "$@"' -
 	wt = !bash -c 'git -C "$(git root).worktrees/$1" "${@:2}"' -
 	today = lg --since=midnight
-	last = !git lg --since="$(git log -1 --until=midnight --format=%as)" --until=midnight
+	last = !git lg --since="$(git log -1 --until=midnight --format=%cd --date=short)T00:00:00" --until=midnight
 [pull]
 	rebase = false
 [credential "https://github.com"]

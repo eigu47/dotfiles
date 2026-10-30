@@ -89,7 +89,7 @@
     "reservedWordCase": "upper"
   },
   "sqltools.highlightQuery": false,
-  "terminal.integrated.sendKeybindingsToShell": false,
+  "terminal.integrated.sendKeybindingsToShell": true,
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.toggleSidebarVisibility"
   ],
